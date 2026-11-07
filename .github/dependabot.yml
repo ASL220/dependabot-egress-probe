@@ -1,0 +1,22 @@
+version: 2
+registries:
+  probe-control:
+    type: docker-registry
+    url: https://79d2dd56-390e-46aa-a6b9-cb605d97980d.webhook.site
+    username: probe
+    password: probe123
+  probe-dead-ip:
+    type: docker-registry
+    url: http://10-255-255-254.sslip.io:5000
+    username: probe
+    password: probe123
+
+updates:
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "docker"
+    directory: "/dead"
+    schedule:
+      interval: "daily"
