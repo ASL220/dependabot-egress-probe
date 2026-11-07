@@ -7,7 +7,7 @@ registries:
     password: probe123
   probe-dead-ip:
     type: docker-registry
-    url: http://10-255-255-254.sslip.io:5000
+    url: https://10-255-255-254.sslip.io:5000
     username: probe
     password: probe123
 
