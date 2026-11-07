@@ -10,15 +10,34 @@ registries:
     url: https://10-255-255-254.sslip.io:5000
     username: probe
     password: probe123
+  probe-npm-control:
+    type: npm-registry
+    url: https://79d2dd56-390e-46aa-a6b9-cb605d97980d.webhook.site
+    username: probe
+    password: probe123
+    replaces-base: true
 
 updates:
   - package-ecosystem: "docker"
     directory: "/"
     schedule:
       interval: "daily"
+    registries:
+      - probe-control
+      - probe-dead-ip
     open-pull-requests-limit: 2
   - package-ecosystem: "docker"
     directory: "/dead"
     schedule:
       interval: "daily"
+    registries:
+      - probe-control
+      - probe-dead-ip
+    open-pull-requests-limit: 2
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    registries:
+      - probe-npm-control
     open-pull-requests-limit: 2
