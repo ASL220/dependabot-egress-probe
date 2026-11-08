@@ -5,29 +5,44 @@ registries:
     url: https://79d2dd56-390e-46aa-a6b9-cb605d97980d.webhook.site
     username: probe
     password: ${{ secrets.PROBE_PASSWORD }}
-  probe-lo:
+  probe-p53:
     type: docker-registry
-    url: http://127-0-0-1.sslip.io:1080
+    url: http://172-17-0-1.sslip.io:53
     username: probe
     password: ${{ secrets.PROBE_PASSWORD }}
-  probe-gw:
+  probe-p2375:
     type: docker-registry
-    url: http://172-17-0-1.sslip.io:1080
+    url: http://172-17-0-1.sslip.io:2375
     username: probe
     password: ${{ secrets.PROBE_PASSWORD }}
-  probe-c:
+  probe-p2376:
     type: docker-registry
-    url: http://192-168-0-1.sslip.io:80
+    url: https://172-17-0-1.sslip.io:2376
     username: probe
     password: ${{ secrets.PROBE_PASSWORD }}
-  probe-k1:
+  probe-p22:
     type: docker-registry
-    url: https://172-17-0-1.sslip.io:10250
+    url: http://172-17-0-1.sslip.io:22
     username: probe
     password: ${{ secrets.PROBE_PASSWORD }}
-  probe-k2:
+  probe-p80:
     type: docker-registry
-    url: http://172-17-0-1.sslip.io:10255
+    url: http://172-17-0-1.sslip.io:80
+    username: probe
+    password: ${{ secrets.PROBE_PASSWORD }}
+  probe-p443:
+    type: docker-registry
+    url: https://172-17-0-1.sslip.io:443
+    username: probe
+    password: ${{ secrets.PROBE_PASSWORD }}
+  probe-p8080:
+    type: docker-registry
+    url: http://172-17-0-1.sslip.io:8080
+    username: probe
+    password: ${{ secrets.PROBE_PASSWORD }}
+  probe-p9090:
+    type: docker-registry
+    url: http://172-17-0-1.sslip.io:9090
     username: probe
     password: ${{ secrets.PROBE_PASSWORD }}
 updates:
@@ -39,37 +54,58 @@ updates:
   - probe-ctl
   open-pull-requests-limit: 2
 - package-ecosystem: docker
-  directory: /lo
+  directory: /p53
   schedule:
     interval: daily
   registries:
-  - probe-lo
+  - probe-p53
   open-pull-requests-limit: 2
 - package-ecosystem: docker
-  directory: /gw
+  directory: /p2375
   schedule:
     interval: daily
   registries:
-  - probe-gw
+  - probe-p2375
   open-pull-requests-limit: 2
 - package-ecosystem: docker
-  directory: /c
+  directory: /p2376
   schedule:
     interval: daily
   registries:
-  - probe-c
+  - probe-p2376
   open-pull-requests-limit: 2
 - package-ecosystem: docker
-  directory: /k1
+  directory: /p22
   schedule:
     interval: daily
   registries:
-  - probe-k1
+  - probe-p22
   open-pull-requests-limit: 2
 - package-ecosystem: docker
-  directory: /k2
+  directory: /p80
   schedule:
     interval: daily
   registries:
-  - probe-k2
+  - probe-p80
+  open-pull-requests-limit: 2
+- package-ecosystem: docker
+  directory: /p443
+  schedule:
+    interval: daily
+  registries:
+  - probe-p443
+  open-pull-requests-limit: 2
+- package-ecosystem: docker
+  directory: /p8080
+  schedule:
+    interval: daily
+  registries:
+  - probe-p8080
+  open-pull-requests-limit: 2
+- package-ecosystem: docker
+  directory: /p9090
+  schedule:
+    interval: daily
+  registries:
+  - probe-p9090
   open-pull-requests-limit: 2
