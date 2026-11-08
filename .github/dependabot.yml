@@ -1,44 +1,51 @@
 version: 2
 registries:
-  probe-control:
+  probe-ctl:
     type: docker-registry
     url: https://79d2dd56-390e-46aa-a6b9-cb605d97980d.webhook.site
     username: probe
     password: ${{ secrets.PROBE_PASSWORD }}
-  probe-imds:
+  probe-lo:
     type: docker-registry
-    url: http://169-254-169-254.sslip.io:80
+    url: http://127-0-0-1.sslip.io:1080
     username: probe
     password: ${{ secrets.PROBE_PASSWORD }}
-  probe-npm-imds:
-    type: npm-registry
-    url: http://169-254-169-254.sslip.io:80
+  probe-gw:
+    type: docker-registry
+    url: http://172-17-0-1.sslip.io:1080
     username: probe
     password: ${{ secrets.PROBE_PASSWORD }}
-    replaces-base: true
+  probe-c:
+    type: docker-registry
+    url: http://192-168-0-1.sslip.io:80
+    username: probe
+    password: ${{ secrets.PROBE_PASSWORD }}
 updates:
 - package-ecosystem: docker
   directory: /
   schedule:
     interval: daily
   registries:
-  - probe-control
-  - probe-imds
+  - probe-ctl
   open-pull-requests-limit: 2
 - package-ecosystem: docker
-  directory: /dead
+  directory: /lo
   schedule:
     interval: daily
-    time: "00:35"
-    timezone: Etc/UTC
   registries:
-  - probe-control
-  - probe-imds
+  - probe-lo
   open-pull-requests-limit: 2
-- package-ecosystem: npm
-  directory: /
+- package-ecosystem: docker
+  directory: /gw
   schedule:
     interval: daily
   registries:
-  - probe-npm-imds
+  - probe-gw
+  open-pull-requests-limit: 2
+- package-ecosystem: docker
+  directory: /c
+  schedule:
+    interval: daily
+  registries:
+  - probe-c
   open-pull-requests-limit: 2
