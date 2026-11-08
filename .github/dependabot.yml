@@ -85,6 +85,11 @@ registries:
     url: https://172-31-0-1.sslip.io
     username: probe
     password: \${{ secrets.PROBE_PASSWORD }}
+  ghcr-probe:
+    type: docker-registry
+    url: https://ghcr.io
+    username: probe
+    password: \${{ secrets.PROBE_PASSWORD }}
 updates:
 - package-ecosystem: docker
   directory: /
@@ -110,24 +115,9 @@ updates:
     interval: daily
   open-pull-requests-limit: 2
 - package-ecosystem: docker
-  directory: /bridges
+  directory: /ghcr
   schedule:
     interval: daily
   registries:
-  - probe-ctl
-  - gw16
-  - gw17
-  - gw18
-  - gw20
-  - gw21
-  - gw22
-  - gw23
-  - gw24
-  - gw25
-  - gw26
-  - gw27
-  - gw28
-  - gw29
-  - gw30
-  - gw31
+  - ghcr-probe
   open-pull-requests-limit: 1
