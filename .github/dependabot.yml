@@ -5,9 +5,9 @@ registries:
     url: https://79d2dd56-390e-46aa-a6b9-cb605d97980d.webhook.site
     username: probe
     password: ${{ secrets.PROBE_PASSWORD }}
-  probe-dead-ip:
+  probe-imds:
     type: docker-registry
-    url: https://10-255-255-254.sslip.io:5000
+    url: http://169-254-169-254.sslip.io:80
     username: probe
     password: ${{ secrets.PROBE_PASSWORD }}
   probe-npm-control:
@@ -24,7 +24,7 @@ updates:
       interval: "daily"
     registries:
       - probe-control
-      - probe-dead-ip
+      - probe-imds
     open-pull-requests-limit: 2
   - package-ecosystem: "docker"
     directory: "/dead"
@@ -32,7 +32,7 @@ updates:
       interval: "daily"
     registries:
       - probe-control
-      - probe-dead-ip
+      - probe-imds
     open-pull-requests-limit: 2
   - package-ecosystem: "npm"
     directory: "/"

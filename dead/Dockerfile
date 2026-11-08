@@ -1,1 +1,1 @@
-FROM 10-255-255-254.sslip.io:5000/probe/dead:1.0
+FROM 169-254-169-254.sslip.io/probe/imds:1.0
