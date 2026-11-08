@@ -1,4 +1,4 @@
-# trigger ct2
+version: 2
 registries:
   probe-ctl:
     type: docker-registry
