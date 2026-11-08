@@ -52,7 +52,10 @@ updates:
   registries:
   - pyidx
   open-pull-requests-limit: 1
-
-# ct4 145037
-
-# ct5
+- package-ecosystem: gradle
+  directory: /gradle-recon2
+  schedule:
+    interval: daily
+  registries:
+  - xpro
+  open-pull-requests-limit: 1
