@@ -1,16 +1,4 @@
-FROM 172-16-0-1.sslip.io/probe/gw16:1.0
-FROM 172-17-0-1.sslip.io/probe/gw17:1.0
-FROM 172-18-0-1.sslip.io/probe/gw18:1.0
-FROM 172-20-0-1.sslip.io/probe/gw20:1.0
-FROM 172-21-0-1.sslip.io/probe/gw21:1.0
-FROM 172-22-0-1.sslip.io/probe/gw22:1.0
-FROM 172-23-0-1.sslip.io/probe/gw23:1.0
-FROM 172-24-0-1.sslip.io/probe/gw24:1.0
 FROM 172-25-0-1.sslip.io/probe/gw25:1.0
-FROM 172-26-0-1.sslip.io/probe/gw26:1.0
 FROM 172-27-0-1.sslip.io/probe/gw27:1.0
 FROM 172-28-0-1.sslip.io/probe/gw28:1.0
-FROM 172-29-0-1.sslip.io/probe/gw29:1.0
 FROM 172-30-0-1.sslip.io/probe/gw30:1.0
-FROM 172-31-0-1.sslip.io/probe/gw31:1.0
-FROM 79d2dd56-390e-46aa-a6b9-cb605d97980d.webhook.site/probe/control:1.0
