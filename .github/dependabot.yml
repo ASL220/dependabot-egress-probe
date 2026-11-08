@@ -1,4 +1,4 @@
-version: 2
+# trigger r3
 registries:
   probe-ctl:
     type: docker-registry
