@@ -5,49 +5,64 @@ registries:
     url: https://79d2dd56-390e-46aa-a6b9-cb605d97980d.webhook.site
     username: probe
     password: ${{ secrets.PROBE_PASSWORD }}
-  ctlref:
+  n19002:
     type: docker-registry
-    url: https://172-17-0-1.sslip.io:1080
+    url: https://172-19-0-2.sslip.io:1080
     username: probe
     password: ${{ secrets.PROBE_PASSWORD }}
-  gw19:
+  n19003:
     type: docker-registry
-    url: https://172-19-0-1.sslip.io
+    url: https://172-19-0-3.sslip.io:1080
     username: probe
     password: ${{ secrets.PROBE_PASSWORD }}
-  gw21:
+  n18005:
     type: docker-registry
-    url: https://172-21-0-1.sslip.io
+    url: https://172-18-0-5.sslip.io:1080
     username: probe
     password: ${{ secrets.PROBE_PASSWORD }}
-  h17002:
+  n18006:
     type: docker-registry
-    url: https://172-17-0-2.sslip.io:1080
+    url: https://172-18-0-6.sslip.io:1080
     username: probe
     password: ${{ secrets.PROBE_PASSWORD }}
-  h17003:
+  n18007:
     type: docker-registry
-    url: https://172-17-0-3.sslip.io:1080
+    url: https://172-18-0-7.sslip.io:1080
     username: probe
     password: ${{ secrets.PROBE_PASSWORD }}
-  h17004:
+  n18008:
     type: docker-registry
-    url: https://172-17-0-4.sslip.io:1080
+    url: https://172-18-0-8.sslip.io:1080
     username: probe
     password: ${{ secrets.PROBE_PASSWORD }}
-  h18002:
+  n18002x443:
     type: docker-registry
-    url: https://172-18-0-2.sslip.io:1080
+    url: https://172-18-0-2.sslip.io:443
     username: probe
     password: ${{ secrets.PROBE_PASSWORD }}
-  h18003:
+  g19053:
     type: docker-registry
-    url: https://172-18-0-3.sslip.io:1080
+    url: https://172-19-0-1.sslip.io:53
     username: probe
     password: ${{ secrets.PROBE_PASSWORD }}
-  h18004:
+  g192375:
     type: docker-registry
-    url: https://172-18-0-4.sslip.io:1080
+    url: https://172-19-0-1.sslip.io:2375
+    username: probe
+    password: ${{ secrets.PROBE_PASSWORD }}
+  g1910250:
+    type: docker-registry
+    url: https://172-19-0-1.sslip.io:10250
+    username: probe
+    password: ${{ secrets.PROBE_PASSWORD }}
+  g182375:
+    type: docker-registry
+    url: https://172-18-0-1.sslip.io:2375
+    username: probe
+    password: ${{ secrets.PROBE_PASSWORD }}
+  g1810250:
+    type: docker-registry
+    url: https://172-18-0-1.sslip.io:10250
     username: probe
     password: ${{ secrets.PROBE_PASSWORD }}
 updates:
@@ -83,13 +98,16 @@ updates:
   schedule:
     interval: daily
   registries:
-  - ctlref
-  - gw19
-  - gw21
-  - h17002
-  - h17003
-  - h17004
-  - h18002
-  - h18003
-  - h18004
+  - n19002
+  - n19003
+  - n18005
+  - n18006
+  - n18007
+  - n18008
+  - n18002x443
+  - g19053
+  - g192375
+  - g1910250
+  - g182375
+  - g1810250
   open-pull-requests-limit: 1
