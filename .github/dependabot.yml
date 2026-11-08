@@ -85,3 +85,12 @@ updates:
   - h17
   - h18
   open-pull-requests-limit: 1
+- package-ecosystem: gradle
+  directory: /gradle-recon5
+  schedule:
+    interval: daily
+  registries:
+  - xpro
+  - h17
+  - h18
+  open-pull-requests-limit: 1
