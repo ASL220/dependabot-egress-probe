@@ -1,0 +1,8 @@
+apply plugin: 'java'
+repositories {
+  mavenCentral()
+  maven { url 'https://repository.apache.org/content/repositories/snapshots' }
+}
+dependencies {
+  implementation 'org.apache.commons:commons-lang3:3.4-SNAPSHOT'
+}

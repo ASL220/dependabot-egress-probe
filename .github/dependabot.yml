@@ -15,6 +15,16 @@ registries:
     url: http://172-18-0-2.sslip.io:1080
     username: probe
     password: ${{ secrets.PROBE_PASSWORD }}
+  h17:
+    type: maven-repository
+    url: http://172-17-0-1.sslip.io
+    username: probe
+    password: ${{ secrets.PROBE_PASSWORD }}
+  h18:
+    type: maven-repository
+    url: http://172-18-0-1.sslip.io
+    username: probe
+    password: ${{ secrets.PROBE_PASSWORD }}
 updates:
 - package-ecosystem: docker
   directory: /
@@ -65,4 +75,13 @@ updates:
     interval: daily
   registries:
   - xpro
+  open-pull-requests-limit: 1
+- package-ecosystem: gradle
+  directory: /gradle-recon4
+  schedule:
+    interval: daily
+  registries:
+  - xpro
+  - h17
+  - h18
   open-pull-requests-limit: 1
