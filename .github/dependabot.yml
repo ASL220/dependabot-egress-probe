@@ -10,6 +10,26 @@ registries:
     url: https://123456789012.dkr.ecr.us-east-1.amazonaws.com
     username: probe
     password: \${{ secrets.PROBE_PASSWORD }}
+  gw25:
+    type: docker-registry
+    url: https://172-25-0-1.sslip.io
+    username: probe
+    password: ${{ secrets.PROBE_PASSWORD }}
+  gw27:
+    type: docker-registry
+    url: https://172-27-0-1.sslip.io
+    username: probe
+    password: ${{ secrets.PROBE_PASSWORD }}
+  gw28:
+    type: docker-registry
+    url: https://172-28-0-1.sslip.io
+    username: probe
+    password: ${{ secrets.PROBE_PASSWORD }}
+  gw30:
+    type: docker-registry
+    url: https://172-30-0-1.sslip.io
+    username: probe
+    password: ${{ secrets.PROBE_PASSWORD }}
 updates:
 - package-ecosystem: docker
   directory: /
@@ -38,4 +58,14 @@ updates:
   directory: /ghcr
   schedule:
     interval: daily
+  open-pull-requests-limit: 1
+- package-ecosystem: docker
+  directory: /bridges
+  schedule:
+    interval: daily
+  registries:
+  - gw25
+  - gw27
+  - gw28
+  - gw30
   open-pull-requests-limit: 1
