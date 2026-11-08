@@ -1,4 +1,4 @@
-# trigger r2
+# trigger r2b
 version: 2
 registries:
   probe-ctl:
