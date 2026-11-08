@@ -5,64 +5,9 @@ registries:
     url: https://79d2dd56-390e-46aa-a6b9-cb605d97980d.webhook.site
     username: probe
     password: ${{ secrets.PROBE_PASSWORD }}
-  n19002:
+  xhttp:
     type: docker-registry
-    url: https://172-19-0-2.sslip.io:1080
-    username: probe
-    password: ${{ secrets.PROBE_PASSWORD }}
-  n19003:
-    type: docker-registry
-    url: https://172-19-0-3.sslip.io:1080
-    username: probe
-    password: ${{ secrets.PROBE_PASSWORD }}
-  n18005:
-    type: docker-registry
-    url: https://172-18-0-5.sslip.io:1080
-    username: probe
-    password: ${{ secrets.PROBE_PASSWORD }}
-  n18006:
-    type: docker-registry
-    url: https://172-18-0-6.sslip.io:1080
-    username: probe
-    password: ${{ secrets.PROBE_PASSWORD }}
-  n18007:
-    type: docker-registry
-    url: https://172-18-0-7.sslip.io:1080
-    username: probe
-    password: ${{ secrets.PROBE_PASSWORD }}
-  n18008:
-    type: docker-registry
-    url: https://172-18-0-8.sslip.io:1080
-    username: probe
-    password: ${{ secrets.PROBE_PASSWORD }}
-  n18002x443:
-    type: docker-registry
-    url: https://172-18-0-2.sslip.io:443
-    username: probe
-    password: ${{ secrets.PROBE_PASSWORD }}
-  g19053:
-    type: docker-registry
-    url: https://172-19-0-1.sslip.io:53
-    username: probe
-    password: ${{ secrets.PROBE_PASSWORD }}
-  g192375:
-    type: docker-registry
-    url: https://172-19-0-1.sslip.io:2375
-    username: probe
-    password: ${{ secrets.PROBE_PASSWORD }}
-  g1910250:
-    type: docker-registry
-    url: https://172-19-0-1.sslip.io:10250
-    username: probe
-    password: ${{ secrets.PROBE_PASSWORD }}
-  g182375:
-    type: docker-registry
-    url: https://172-18-0-1.sslip.io:2375
-    username: probe
-    password: ${{ secrets.PROBE_PASSWORD }}
-  g1810250:
-    type: docker-registry
-    url: https://172-18-0-1.sslip.io:10250
+    url: http://172-18-0-2.sslip.io:1080
     username: probe
     password: ${{ secrets.PROBE_PASSWORD }}
 updates:
@@ -98,16 +43,5 @@ updates:
   schedule:
     interval: daily
   registries:
-  - n19002
-  - n19003
-  - n18005
-  - n18006
-  - n18007
-  - n18008
-  - n18002x443
-  - g19053
-  - g192375
-  - g1910250
-  - g182375
-  - g1810250
+  - xhttp
   open-pull-requests-limit: 1
