@@ -1,1 +1,1 @@
-FROM ghcr.io/ASL220/probe/pub:1.0
+FROM ghcr.io/asl220/probe/pub:1.0
