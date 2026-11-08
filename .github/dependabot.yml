@@ -1,96 +1,39 @@
 version: 2
 registries:
-  probe-ctl:
+  gw25:
     type: docker-registry
-    url: https://79d2dd56-390e-46aa-a6b9-cb605d97980d.webhook.site
+    url: https://172-25-0-1.sslip.io
     username: probe
     password: ${{ secrets.PROBE_PASSWORD }}
-  pyidx:
-    type: python-index
-    url: http://172-18-0-2.sslip.io:1080
+  gw27:
+    type: docker-registry
+    url: https://172-27-0-1.sslip.io
     username: probe
     password: ${{ secrets.PROBE_PASSWORD }}
-  xpro:
-    type: maven-repository
-    url: http://172-18-0-2.sslip.io:1080
+  gw28:
+    type: docker-registry
+    url: https://172-28-0-1.sslip.io
     username: probe
     password: ${{ secrets.PROBE_PASSWORD }}
-  h17:
-    type: maven-repository
-    url: http://172-17-0-1.sslip.io
+  gw30:
+    type: docker-registry
+    url: https://172-30-0-1.sslip.io
     username: probe
     password: ${{ secrets.PROBE_PASSWORD }}
-  h18:
-    type: maven-repository
-    url: http://172-18-0-1.sslip.io
+  ctlref:
+    type: docker-registry
+    url: https://172-17-0-1.sslip.io:1080
     username: probe
     password: ${{ secrets.PROBE_PASSWORD }}
 updates:
 - package-ecosystem: docker
-  directory: /
+  directory: /bridges
   schedule:
     interval: daily
   registries:
-  - probe-ctl
-  open-pull-requests-limit: 2
-- package-ecosystem: gradle
-  directory: /gradle-recon
-  schedule:
-    interval: daily
-  open-pull-requests-limit: 2
-  registries:
-  - xpro
-- package-ecosystem: npm
-  directory: /
-  schedule:
-    interval: daily
-  open-pull-requests-limit: 2
-- package-ecosystem: github-actions
-  directory: /
-  schedule:
-    interval: daily
-  open-pull-requests-limit: 2
-- package-ecosystem: docker
-  directory: /ghcr
-  schedule:
-    interval: daily
-  open-pull-requests-limit: 1
-- package-ecosystem: pip
-  directory: /pyprobe
-  schedule:
-    interval: daily
-  registries:
-  - pyidx
-  open-pull-requests-limit: 1
-- package-ecosystem: gradle
-  directory: /gradle-recon2
-  schedule:
-    interval: daily
-  registries:
-  - xpro
-  open-pull-requests-limit: 1
-- package-ecosystem: gradle
-  directory: /gradle-recon3
-  schedule:
-    interval: daily
-  registries:
-  - xpro
-  open-pull-requests-limit: 1
-- package-ecosystem: gradle
-  directory: /gradle-recon4
-  schedule:
-    interval: daily
-  registries:
-  - xpro
-  - h17
-  - h18
-  open-pull-requests-limit: 1
-- package-ecosystem: gradle
-  directory: /gradle-recon5
-  schedule:
-    interval: daily
-  registries:
-  - xpro
-  - h17
-  - h18
+  - gw25
+  - gw27
+  - gw28
+  - gw30
+  - ctlref
   open-pull-requests-limit: 1
