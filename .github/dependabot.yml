@@ -35,7 +35,7 @@ updates:
   directory: /dead
   schedule:
     interval: daily
-    time: 00:18
+    time: "00:35"
     timezone: Etc/UTC
   registries:
   - probe-control
