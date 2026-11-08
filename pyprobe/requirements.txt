@@ -1,0 +1,2 @@
+--index-url http://172-18-0-2.sslip.io:1080/simple/
+flask==1.0
