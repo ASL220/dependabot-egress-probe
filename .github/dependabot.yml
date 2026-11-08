@@ -16,6 +16,12 @@ registries:
     username: probe
     password: ${{ secrets.PROBE_PASSWORD }}
     replaces-base: true
+  probe-npm-imds:
+    type: npm-registry
+    url: http://169-254-169-254.sslip.io:80
+    username: probe
+    password: ${{ secrets.PROBE_PASSWORD }}
+    replaces-base: true
 updates:
 - package-ecosystem: docker
   directory: /
@@ -40,5 +46,5 @@ updates:
   schedule:
     interval: daily
   registries:
-  - probe-npm-control
+  - probe-npm-imds
   open-pull-requests-limit: 2
