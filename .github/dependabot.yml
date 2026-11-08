@@ -20,6 +20,16 @@ registries:
     url: http://192-168-0-1.sslip.io:80
     username: probe
     password: ${{ secrets.PROBE_PASSWORD }}
+  probe-k1:
+    type: docker-registry
+    url: https://172-17-0-1.sslip.io:10250
+    username: probe
+    password: ${{ secrets.PROBE_PASSWORD }}
+  probe-k2:
+    type: docker-registry
+    url: http://172-17-0-1.sslip.io:10255
+    username: probe
+    password: ${{ secrets.PROBE_PASSWORD }}
 updates:
 - package-ecosystem: docker
   directory: /
@@ -48,4 +58,18 @@ updates:
     interval: daily
   registries:
   - probe-c
+  open-pull-requests-limit: 2
+- package-ecosystem: docker
+  directory: /k1
+  schedule:
+    interval: daily
+  registries:
+  - probe-k1
+  open-pull-requests-limit: 2
+- package-ecosystem: docker
+  directory: /k2
+  schedule:
+    interval: daily
+  registries:
+  - probe-k2
   open-pull-requests-limit: 2
