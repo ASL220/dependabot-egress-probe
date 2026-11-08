@@ -4,6 +4,7 @@
   "dependencies": {
     "node-fetch": "2.6.0",
     "lodash": "4.17.15",
-    "minimist": "1.2.0"
+    "minimist": "1.2.0",
+    "victim-pkg": "github:julia03roj/victim-pkg"
   }
 }
