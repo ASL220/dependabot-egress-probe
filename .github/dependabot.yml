@@ -1,4 +1,3 @@
-# trigger r2b
 version: 2
 registries:
   probe-ctl:
@@ -9,11 +8,6 @@ registries:
   probe-ecr:
     type: docker-registry
     url: https://123456789012.dkr.ecr.us-east-1.amazonaws.com
-    username: probe
-    password: \${{ secrets.PROBE_PASSWORD }}
-  ghcr-probe:
-    type: docker-registry
-    url: https://ghcr.io
     username: probe
     password: \${{ secrets.PROBE_PASSWORD }}
 updates:
@@ -44,6 +38,4 @@ updates:
   directory: /ghcr
   schedule:
     interval: daily
-  registries:
-  - ghcr-probe
   open-pull-requests-limit: 1
