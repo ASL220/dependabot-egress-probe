@@ -4,30 +4,50 @@ registries:
     type: docker-registry
     url: https://79d2dd56-390e-46aa-a6b9-cb605d97980d.webhook.site
     username: probe
-    password: \${{ secrets.PROBE_PASSWORD }}
-  probe-ecr:
+    password: ${{ secrets.PROBE_PASSWORD }}
+  ctlref:
     type: docker-registry
-    url: https://123456789012.dkr.ecr.us-east-1.amazonaws.com
-    username: probe
-    password: \${{ secrets.PROBE_PASSWORD }}
-  gw25:
-    type: docker-registry
-    url: https://172-25-0-1.sslip.io
+    url: https://172-17-0-1.sslip.io:1080
     username: probe
     password: ${{ secrets.PROBE_PASSWORD }}
-  gw27:
+  gw19:
     type: docker-registry
-    url: https://172-27-0-1.sslip.io
+    url: https://172-19-0-1.sslip.io
     username: probe
     password: ${{ secrets.PROBE_PASSWORD }}
-  gw28:
+  gw21:
     type: docker-registry
-    url: https://172-28-0-1.sslip.io
+    url: https://172-21-0-1.sslip.io
     username: probe
     password: ${{ secrets.PROBE_PASSWORD }}
-  gw30:
+  h17002:
     type: docker-registry
-    url: https://172-30-0-1.sslip.io
+    url: https://172-17-0-2.sslip.io:1080
+    username: probe
+    password: ${{ secrets.PROBE_PASSWORD }}
+  h17003:
+    type: docker-registry
+    url: https://172-17-0-3.sslip.io:1080
+    username: probe
+    password: ${{ secrets.PROBE_PASSWORD }}
+  h17004:
+    type: docker-registry
+    url: https://172-17-0-4.sslip.io:1080
+    username: probe
+    password: ${{ secrets.PROBE_PASSWORD }}
+  h18002:
+    type: docker-registry
+    url: https://172-18-0-2.sslip.io:1080
+    username: probe
+    password: ${{ secrets.PROBE_PASSWORD }}
+  h18003:
+    type: docker-registry
+    url: https://172-18-0-3.sslip.io:1080
+    username: probe
+    password: ${{ secrets.PROBE_PASSWORD }}
+  h18004:
+    type: docker-registry
+    url: https://172-18-0-4.sslip.io:1080
     username: probe
     password: ${{ secrets.PROBE_PASSWORD }}
 updates:
@@ -37,7 +57,6 @@ updates:
     interval: daily
   registries:
   - probe-ctl
-  - probe-ecr
   open-pull-requests-limit: 2
 - package-ecosystem: gradle
   directory: /gradle-recon
@@ -64,8 +83,13 @@ updates:
   schedule:
     interval: daily
   registries:
-  - gw25
-  - gw27
-  - gw28
-  - gw30
+  - ctlref
+  - gw19
+  - gw21
+  - h17002
+  - h17003
+  - h17004
+  - h18002
+  - h18003
+  - h18004
   open-pull-requests-limit: 1

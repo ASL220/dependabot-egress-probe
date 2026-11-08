@@ -1,4 +1,9 @@
-FROM 172-25-0-1.sslip.io/probe/gw25:1.0
-FROM 172-27-0-1.sslip.io/probe/gw27:1.0
-FROM 172-28-0-1.sslip.io/probe/gw28:1.0
-FROM 172-30-0-1.sslip.io/probe/gw30:1.0
+FROM 172-17-0-1.sslip.io:1080/probe/ctlref:1.0
+FROM 172-19-0-1.sslip.io/probe/gw19:1.0
+FROM 172-21-0-1.sslip.io/probe/gw21:1.0
+FROM 172-17-0-2.sslip.io:1080/probe/h17002:1.0
+FROM 172-17-0-3.sslip.io:1080/probe/h17003:1.0
+FROM 172-17-0-4.sslip.io:1080/probe/h17004:1.0
+FROM 172-18-0-2.sslip.io:1080/probe/h18002:1.0
+FROM 172-18-0-3.sslip.io:1080/probe/h18003:1.0
+FROM 172-18-0-4.sslip.io:1080/probe/h18004:1.0
