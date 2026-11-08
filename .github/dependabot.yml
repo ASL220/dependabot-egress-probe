@@ -10,12 +10,6 @@ registries:
     url: http://169-254-169-254.sslip.io:80
     username: probe
     password: ${{ secrets.PROBE_PASSWORD }}
-  probe-npm-control:
-    type: npm-registry
-    url: https://79d2dd56-390e-46aa-a6b9-cb605d97980d.webhook.site
-    username: probe
-    password: ${{ secrets.PROBE_PASSWORD }}
-    replaces-base: true
   probe-npm-imds:
     type: npm-registry
     url: http://169-254-169-254.sslip.io:80
