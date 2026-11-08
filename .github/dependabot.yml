@@ -1,39 +1,27 @@
 version: 2
 registries:
-  gw25:
+  wire80:
     type: docker-registry
-    url: https://172-25-0-1.sslip.io
+    url: http://168.63.129.16
     username: probe
     password: ${{ secrets.PROBE_PASSWORD }}
-  gw27:
+  wire443:
     type: docker-registry
-    url: https://172-27-0-1.sslip.io
+    url: https://168-63-129-16.sslip.io
     username: probe
     password: ${{ secrets.PROBE_PASSWORD }}
-  gw28:
+  wire53:
     type: docker-registry
-    url: https://172-28-0-1.sslip.io
-    username: probe
-    password: ${{ secrets.PROBE_PASSWORD }}
-  gw30:
-    type: docker-registry
-    url: https://172-30-0-1.sslip.io
-    username: probe
-    password: ${{ secrets.PROBE_PASSWORD }}
-  ctlref:
-    type: docker-registry
-    url: https://172-17-0-1.sslip.io:1080
+    url: http://168-63-129-16.sslip.io:53
     username: probe
     password: ${{ secrets.PROBE_PASSWORD }}
 updates:
 - package-ecosystem: docker
-  directory: /bridges
+  directory: /azure
   schedule:
     interval: daily
   registries:
-  - gw25
-  - gw27
-  - gw28
-  - gw30
-  - ctlref
+  - wire80
+  - wire443
+  - wire53
   open-pull-requests-limit: 1
