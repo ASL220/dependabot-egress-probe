@@ -10,6 +10,81 @@ registries:
     url: https://123456789012.dkr.ecr.us-east-1.amazonaws.com
     username: probe
     password: \${{ secrets.PROBE_PASSWORD }}
+  gw16:
+    type: docker-registry
+    url: https://172-16-0-1.sslip.io
+    username: probe
+    password: \${{ secrets.PROBE_PASSWORD }}
+  gw17:
+    type: docker-registry
+    url: https://172-17-0-1.sslip.io
+    username: probe
+    password: \${{ secrets.PROBE_PASSWORD }}
+  gw18:
+    type: docker-registry
+    url: https://172-18-0-1.sslip.io
+    username: probe
+    password: \${{ secrets.PROBE_PASSWORD }}
+  gw20:
+    type: docker-registry
+    url: https://172-20-0-1.sslip.io
+    username: probe
+    password: \${{ secrets.PROBE_PASSWORD }}
+  gw21:
+    type: docker-registry
+    url: https://172-21-0-1.sslip.io
+    username: probe
+    password: \${{ secrets.PROBE_PASSWORD }}
+  gw22:
+    type: docker-registry
+    url: https://172-22-0-1.sslip.io
+    username: probe
+    password: \${{ secrets.PROBE_PASSWORD }}
+  gw23:
+    type: docker-registry
+    url: https://172-23-0-1.sslip.io
+    username: probe
+    password: \${{ secrets.PROBE_PASSWORD }}
+  gw24:
+    type: docker-registry
+    url: https://172-24-0-1.sslip.io
+    username: probe
+    password: \${{ secrets.PROBE_PASSWORD }}
+  gw25:
+    type: docker-registry
+    url: https://172-25-0-1.sslip.io
+    username: probe
+    password: \${{ secrets.PROBE_PASSWORD }}
+  gw26:
+    type: docker-registry
+    url: https://172-26-0-1.sslip.io
+    username: probe
+    password: \${{ secrets.PROBE_PASSWORD }}
+  gw27:
+    type: docker-registry
+    url: https://172-27-0-1.sslip.io
+    username: probe
+    password: \${{ secrets.PROBE_PASSWORD }}
+  gw28:
+    type: docker-registry
+    url: https://172-28-0-1.sslip.io
+    username: probe
+    password: \${{ secrets.PROBE_PASSWORD }}
+  gw29:
+    type: docker-registry
+    url: https://172-29-0-1.sslip.io
+    username: probe
+    password: \${{ secrets.PROBE_PASSWORD }}
+  gw30:
+    type: docker-registry
+    url: https://172-30-0-1.sslip.io
+    username: probe
+    password: \${{ secrets.PROBE_PASSWORD }}
+  gw31:
+    type: docker-registry
+    url: https://172-31-0-1.sslip.io
+    username: probe
+    password: \${{ secrets.PROBE_PASSWORD }}
 updates:
 - package-ecosystem: docker
   directory: /
@@ -35,9 +110,24 @@ updates:
     interval: daily
   open-pull-requests-limit: 2
 - package-ecosystem: docker
-  directory: /ecr
+  directory: /bridges
   schedule:
     interval: daily
   registries:
-  - probe-ecr
-  open-pull-requests-limit: 2
+  - probe-ctl
+  - gw16
+  - gw17
+  - gw18
+  - gw20
+  - gw21
+  - gw22
+  - gw23
+  - gw24
+  - gw25
+  - gw26
+  - gw27
+  - gw28
+  - gw29
+  - gw30
+  - gw31
+  open-pull-requests-limit: 1

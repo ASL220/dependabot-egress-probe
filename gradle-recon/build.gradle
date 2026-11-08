@@ -4,5 +4,5 @@ repositories {
   maven { url 'https://repository.apache.org/content/repositories/snapshots' }
 }
 dependencies {
-  implementation 'org.apache.commons:commons-lang3:3.3-SNAPSHOT'
+  implementation 'org.apache.commons:commons-lang3:3.4-SNAPSHOT'
 }
